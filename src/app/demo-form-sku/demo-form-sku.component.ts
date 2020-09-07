@@ -9,11 +9,11 @@ export class DemoFormSkuComponent implements OnInit {
 
   constructor() { }
 
-  onSubmit(form: any): void{
-    console.log('This was submitted:', form);
-  }
-
   ngOnInit(): void {
   }
 
+  // function called to submit data in the field
+  onSubmit(form: any): void{
+    console.log('This was submitted:', form);
+  }
 }
