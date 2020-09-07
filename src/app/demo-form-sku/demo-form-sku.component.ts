@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// Allows coder to create more customizable forms
+import { FormBuilder, FormGroup } from '@angular/forms'
+
 @Component({
   selector: 'app-demo-form-sku',
   templateUrl: './demo-form-sku.component.html',
