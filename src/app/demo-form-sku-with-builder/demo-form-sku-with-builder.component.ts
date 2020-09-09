@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 })
 export class DemoFormSkuWithBuilderComponent implements OnInit {
 
+  // basic form variable
   myForm: FormGroup;
 
   constructor(fb: FormBuilder) { 
@@ -19,6 +20,11 @@ export class DemoFormSkuWithBuilderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  // function called to submit data in the field
+  onSubmit(form: any): void{
+    console.log('This was submitted:', form);
   }
 
 }
