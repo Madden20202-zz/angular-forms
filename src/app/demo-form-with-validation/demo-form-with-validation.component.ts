@@ -13,9 +13,15 @@ import {
 })
 export class DemoFormWithValidationComponent implements OnInit {
 
+  // Gives a form to work with
   myForm: FormGroup;
+
+  // variable for the validator control
   sku: AbstractControl;
 
+  // Allows the value to be validated by 
+  // checking the value the user gives 
+  
   constructor(fb: FormBuilder) { 
     this.myForm = fb.group({
       'sku': ['', Validators.required]
