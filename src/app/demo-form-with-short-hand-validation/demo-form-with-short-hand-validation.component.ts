@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
-  Validators,
   AbstractControl,
-  FormControl
+  FormControl,
+  Validators
 } from '@angular/forms'
 
 @Component({
@@ -17,9 +17,6 @@ export class DemoFormWithShortHandValidationComponent implements OnInit {
   // Gives a form to work with
   myForm: FormGroup;
 
-  // variable for the validator control
-  sku: AbstractControl;
-
   ngOnInit(): void {
   }
 
@@ -28,7 +25,12 @@ export class DemoFormWithShortHandValidationComponent implements OnInit {
   }
 
   constructor(fb: FormBuilder) { 
-    this.myForm = fb.group({});
+    this.myForm = fb.group({
+      'sku': ['', Validators.compose([
+        //both of the validators are required in order for a custom validator to work
+        Validators.required, this.skuValidator
+      ])]
+    });
   }
 
   skuValidator(control: FormControl): { [s: string]: boolean } {
