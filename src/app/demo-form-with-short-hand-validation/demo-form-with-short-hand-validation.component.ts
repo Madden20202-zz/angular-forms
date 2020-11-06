@@ -27,14 +27,14 @@ export class DemoFormWithShortHandValidationComponent implements OnInit {
     console.log('You submitted value:', value)
   }
 
-  function skuValidator(control: FormControl): { [s: string]: boolean } {
+  constructor(fb: FormBuilder) { 
+    this.myForm = fb.group({});
+  }
+
+  skuValidator(control: FormControl): { [s: string]: boolean } {
     if (!control.value.match(/^123/)) {
     return {invalidSku: true};
     }
-  }
-  
-  constructor(fb: FormBuilder) { 
-    this.myForm = fb.group({});
   }
 
 }
