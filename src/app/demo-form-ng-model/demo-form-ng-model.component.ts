@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoFormNgModelComponent implements OnInit {
 
-  constructor() { }
+  productName: string;
+
+  constructor() { 
+    this.productName = "ng-book: The Complete Guide to Angular"
+  }
+
+  onSubmit(value: string): void {
+    console.log('you submitted value:', value);
+  }
 
   ngOnInit(): void {
   }
