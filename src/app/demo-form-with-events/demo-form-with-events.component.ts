@@ -37,6 +37,9 @@ export class DemoFormWithEventsComponent implements OnInit {
 
    }
 
+   onSubmit(value: string): void{
+    console.log('You submitted value:', value)
+  }
 
   ngOnInit(): void {
   }
